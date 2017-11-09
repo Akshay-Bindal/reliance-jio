@@ -9,7 +9,7 @@ const version = 'v6';
 const cacheName = `sw-${version}`;
 
 const staticAssetRegex =
-  /(^(https?:\/\/)(.*\/mbassets\/|assetscdn1?\.paytm\.com|shop\.paytm\.com|cdn\.trackjs\.com).*\.(js|css|png|svg|ttf|woff2?|jpe?g))|(^https?:\/\/fonts\.(googleapis|gstatic)\.com\/.*)/i;
+  /(^(https?:\/\/)(.*\/mbassets\/|assetscdn1?\.com|shop\.com|cdn\.trackjs\.com).*\.(js|css|png|svg|ttf|woff2?|jpe?g))|(^https?:\/\/fonts\.(googleapis|gstatic)\.com\/.*)/i;
 
 const regexToExclude =
   /^(https?:\/\/).*\/r?travel\/.*\.(js|css|png|svg|ttf|jpe?g)/i;
@@ -19,9 +19,9 @@ const urisToExclude =
 
 const flyoutsRegex = /^(https?:\/\/).*mobile\/flyouts.*/i;
 
-const catalogRegex = /^https?:\/\/catalog(-staging)?\.paytm\.com\/.*/;
+const catalogRegex = /^https?:\/\/catalog(-staging)?\.com\/.*/;
 
-const utilitiesCacheName = /^PaytmUtilities-v[0-9]{0,}/;
+const utilitiesCacheName = /^Utilities-v[0-9]{0,}/;
 
 // Install the Service Worker
 self.addEventListener('install', () => {

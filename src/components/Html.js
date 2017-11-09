@@ -45,7 +45,11 @@ class Html extends React.Component {
             {title}
           </title>
           <meta name="description" content={description} />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="theme-color" content="#222" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="manifest" href="/manifest.json" />
           {scripts.map(script =>
             <link key={script} rel="preload" href={script} as="script" />,
           )}
@@ -59,6 +63,7 @@ class Html extends React.Component {
             />,
           )}
         </head>
+
         <body>
           <div id="app" dangerouslySetInnerHTML={{ __html: children }} />
           <script
