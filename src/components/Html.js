@@ -50,6 +50,7 @@ class Html extends React.Component {
             <link key={script} rel="preload" href={script} as="script" />,
           )}
           <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           {styles.map(style =>
             <style
               key={style.id}
@@ -64,21 +65,6 @@ class Html extends React.Component {
             dangerouslySetInnerHTML={{ __html: `window.App=${serialize(app)}` }}
           />
           {scripts.map(script => <script key={script} src={script} />)}
-          {config.analytics.googleTrackingId &&
-            <script
-              dangerouslySetInnerHTML={{
-                __html:
-                  'window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;' +
-                  `ga('create','${config.analytics
-                    .googleTrackingId}','auto');ga('send','pageview')`,
-              }}
-            />}
-          {config.analytics.googleTrackingId &&
-            <script
-              src="https://www.google-analytics.com/analytics.js"
-              async
-              defer
-            />}
         </body>
       </html>
     );

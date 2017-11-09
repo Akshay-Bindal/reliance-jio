@@ -10,25 +10,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import s from './landingpage.css';
+import Link from '../../components/Link';
 
-// external-global styles must be imported in your JS.
-import normalizeCss from 'normalize.css';
-import s from './Layout.css';
-import Header from '../Header';
-
-class Layout extends React.Component {
+class NotFound extends React.Component {
   static propTypes = {
-    children: PropTypes.node.isRequired,
+    title: PropTypes.string.isRequired,
   };
 
   render() {
     return (
-      <div>
-        <Header />
-        {this.props.children}
+      <div className={s.root}>
+        <div className={s.container}>
+          <Link to="article/1">
+            <span>Article 1</span>
+          </Link>
+          <Link to="article/2">
+            <span>Article 2</span>
+          </Link>
+        </div>
       </div>
     );
   }
 }
 
-export default withStyles(normalizeCss, s)(Layout);
+export default withStyles(s)(NotFound);

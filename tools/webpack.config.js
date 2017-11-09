@@ -62,6 +62,7 @@ const config = {
       {
         test: reScript,
         include: path.resolve(__dirname, '../src'),
+        exclude: /sw.js/,
         loader: 'babel-loader',
         options: {
           // https://github.com/babel/babel-loader#options

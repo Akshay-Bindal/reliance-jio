@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { registerServiceWorker } from '../serviceWorker/regSw';
 
 const ContextType = {
   // Enables critical path CSS rendering
@@ -47,6 +48,11 @@ class App extends React.PureComponent {
   };
 
   static childContextTypes = ContextType;
+
+  componentDidMount() {
+    console.log('componentDidMount');
+    registerServiceWorker();
+  }
 
   getChildContext() {
     return this.props.context;

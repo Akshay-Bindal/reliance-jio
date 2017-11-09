@@ -47,6 +47,10 @@ class Link extends React.Component {
     history.push(this.props.to);
   };
 
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
   render() {
     const { to, children, ...props } = this.props;
     return (
